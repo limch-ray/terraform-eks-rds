@@ -33,18 +33,18 @@ module "vpc" {
 
   tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
-	Provisioner = "terraform"
+    Provisioner = "terraform"
   }
 
   public_subnet_tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
     "kubernetes.io/role/elb"                      = "1"
-	Provisioner = "terraform"
+    Provisioner = "terraform"
   }
 
   private_subnet_tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
     "kubernetes.io/role/internal-elb"             = "1"
-	Provisioner = "terraform"
+    Provisioner = "terraform"
   }
 }

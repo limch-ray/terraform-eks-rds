@@ -22,6 +22,12 @@ Default output format [None]: json
 
 This enables Terraform access to the configuration file and performs operations on your behalf with these security credentials.
 
+Create a local `terraform.tfvars` file with the following line to set the RDS `admin` user password
+
+```shell
+rds_admin_password = "SECURE ADMIN USERPASSWORD"
+```
+
 ## Terraform Steps
 
 After you've done this, initalize your Terraform workspace, which will download 
