@@ -3,7 +3,7 @@ variable "region" {
   description = "AWS region"
 }
 
-variable "rds_root_password" {
+variable "rds_admin_password" {
 }
 
 provider "aws" {
