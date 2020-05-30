@@ -1,9 +1,10 @@
 # Provision an EKS Cluster
 
-This scripts will provision the following
+These scripts will provision the following
+
 1. Required VPC and subnets
-1. Requierd security groups
-1. EKS cluster + 3 worker nodes in a ASG (Public endpoints)
+1. Required security groups
+1. EKS cluster + 3 worker nodes in a ASG worker group (Public endpoints)
 1. Install nginx-ingress controller with helm
 1. Private RDS
 
