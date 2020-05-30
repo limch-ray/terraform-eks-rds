@@ -11,7 +11,7 @@ module "db" {
 
   name     = "mydbeksdb"
   username = "admin"
-  password = var.rds_root_password
+  password = var.rds_admin_password
   port     = "3306"
 
   iam_database_authentication_enabled = true
