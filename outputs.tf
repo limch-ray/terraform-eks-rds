@@ -28,7 +28,6 @@ output "cluster_name" {
   value       = local.cluster_name
 }
 
-
 output "db_address" {
   description = "RDS address"
   value       = module.db.this_db_instance_address

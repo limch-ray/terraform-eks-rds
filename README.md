@@ -51,3 +51,12 @@ $ aws eks --region ap-southeast-1 update-kubeconfig --name <cluster name>
 $ kubectl get nodes
 $ helm ls
 ```
+
+## Things to add
+
+1. Cluster autoscaling
+1. Route53 management
+1. Private API access
+1. Cloudfront
+1. RDS read replicas
+1. Add more worker group for different instance types or managed groups
