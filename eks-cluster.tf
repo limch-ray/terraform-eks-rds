@@ -35,7 +35,6 @@ module "eks" {
       instance_type                 = "t2.small"
       asg_desired_capacity          = 3
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-      disk_size						= 20
     }
   ]
 }
@@ -47,6 +46,7 @@ provider "helm" {
 	  token                  = data.aws_eks_cluster_auth.cluster.token
 	  load_config_file       = false
   }
+  version = "~> 1.2"
 }
 
 resource "helm_release" "nginx-ingress" {
@@ -54,4 +54,9 @@ resource "helm_release" "nginx-ingress" {
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
   version    = "2.3.0"
+
+  set {
+    name  = "controller.replicaCount"
+    value = 2
+  }
 }
