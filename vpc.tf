@@ -6,9 +6,19 @@ variable "region" {
 variable "rds_admin_password" {
 }
 
+variable "aws_profile" {
+}
+
+variable "aws_role" {
+}
+
 provider "aws" {
   version = ">= 2.28.1"
   region  = "ap-southeast-1"
+  profile = var.aws_profile
+  assume_role {
+    role_arn     = var.aws_role
+  }
 }
 
 data "aws_availability_zones" "available" {}
